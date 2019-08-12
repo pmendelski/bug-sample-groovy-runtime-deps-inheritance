@@ -1,0 +1,119 @@
+> Task :clean
+> Task :compileJava NO-SOURCE
+> Task :compileGroovy NO-SOURCE
+> Task :processResources NO-SOURCE
+> Task :classes UP-TO-DATE
+> Task :jar
+> Task :assemble
+> Task :compileTestJava
+> Task :compileTestGroovy FAILED
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':compileTestGroovy'.
+> com.coditory.sherlock.InMemoryDistributedLockStorage
+
+* Try:
+Run with --info or --debug option to get more log output. Run with --scan to get full insights.
+
+* Exception is:
+org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':compileTestGroovy'.
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$3.accept(ExecuteActionsTaskExecuter.java:148)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter$3.accept(ExecuteActionsTaskExecuter.java:145)
+	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:191)
+	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:138)
+	at org.gradle.api.internal.tasks.execution.ResolveBeforeExecutionStateTaskExecuter.execute(ResolveBeforeExecutionStateTaskExecuter.java:75)
+	at org.gradle.api.internal.tasks.execution.ValidatingTaskExecuter.execute(ValidatingTaskExecuter.java:62)
+	at org.gradle.api.internal.tasks.execution.SkipEmptySourceFilesTaskExecuter.execute(SkipEmptySourceFilesTaskExecuter.java:108)
+	at org.gradle.api.internal.tasks.execution.ResolveBeforeExecutionOutputsTaskExecuter.execute(ResolveBeforeExecutionOutputsTaskExecuter.java:67)
+	at org.gradle.api.internal.tasks.execution.ResolveAfterPreviousExecutionStateTaskExecuter.execute(ResolveAfterPreviousExecutionStateTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.CleanupStaleOutputsExecuter.execute(CleanupStaleOutputsExecuter.java:94)
+	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:95)
+	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:56)
+	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:73)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:49)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$CallableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:416)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$CallableBuildOperationWorker.execute(DefaultBuildOperationExecutor.java:406)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor$1.execute(DefaultBuildOperationExecutor.java:165)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:250)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.execute(DefaultBuildOperationExecutor.java:158)
+	at org.gradle.internal.operations.DefaultBuildOperationExecutor.call(DefaultBuildOperationExecutor.java:102)
+	at org.gradle.internal.operations.DelegatingBuildOperationExecutor.call(DelegatingBuildOperationExecutor.java:36)
+	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:49)
+	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:43)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:355)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:343)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:336)
+	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:322)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker$1.execute(DefaultPlanExecutor.java:134)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker$1.execute(DefaultPlanExecutor.java:129)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:202)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.executeNextNode(DefaultPlanExecutor.java:193)
+	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:129)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+Caused by: java.lang.NoClassDefFoundError: com.coditory.sherlock.InMemoryDistributedLockStorage
+	at org.spockframework.compiler.SpecialMethodCall.checkIsConditionBlock(SpecialMethodCall.java:211)
+	at org.spockframework.compiler.SpecialMethodCall.parse(SpecialMethodCall.java:168)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.visitMethodCallExpression(AbstractDeepBlockRewriter.java:110)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.doVisitMethodCallExpression(AbstractDeepBlockRewriter.java:157)
+	at org.spockframework.compiler.DeepBlockRewriter.doVisitMethodCallExpression(DeepBlockRewriter.java:138)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.visitMethodCallExpression(AbstractDeepBlockRewriter.java:119)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.doVisitMethodCallExpression(AbstractDeepBlockRewriter.java:157)
+	at org.spockframework.compiler.DeepBlockRewriter.doVisitMethodCallExpression(DeepBlockRewriter.java:138)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.visitMethodCallExpression(AbstractDeepBlockRewriter.java:119)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.doVisitBinaryExpression(AbstractDeepBlockRewriter.java:153)
+	at org.spockframework.compiler.DeepBlockRewriter.doVisitBinaryExpression(DeepBlockRewriter.java:110)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.visitBinaryExpression(AbstractDeepBlockRewriter.java:98)
+	at org.spockframework.compiler.DeepBlockRewriter.visitDeclarationExpression(DeepBlockRewriter.java:133)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.doVisitExpressionStatement(AbstractDeepBlockRewriter.java:149)
+	at org.spockframework.compiler.DeepBlockRewriter.visitInteractionAwareExpressionStatement(DeepBlockRewriter.java:79)
+	at org.spockframework.compiler.DeepBlockRewriter.doVisitExpressionStatement(DeepBlockRewriter.java:65)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.visitExpressionStatement(AbstractDeepBlockRewriter.java:87)
+	at org.spockframework.compiler.StatementReplacingVisitorSupport.replace(StatementReplacingVisitorSupport.java:44)
+	at org.spockframework.compiler.AbstractDeepBlockRewriter.visit(AbstractDeepBlockRewriter.java:71)
+	at org.spockframework.compiler.DeepBlockRewriter.visit(DeepBlockRewriter.java:52)
+	at org.spockframework.compiler.SpecRewriter.visitAnyBlock(SpecRewriter.java:317)
+	at org.spockframework.compiler.model.SetupBlock.accept(SetupBlock.java:32)
+	at org.spockframework.compiler.model.Method.accept(Method.java:70)
+	at org.spockframework.compiler.model.Spec.accept(Spec.java:112)
+	at org.spockframework.compiler.SpockTransform$Impl.processSpec(SpockTransform.java:77)
+	at org.spockframework.compiler.SpockTransform$Impl.visit(SpockTransform.java:64)
+	at org.spockframework.compiler.SpockTransform.visit(SpockTransform.java:47)
+	at org.gradle.api.internal.tasks.compile.ApiGroovyCompiler.execute(ApiGroovyCompiler.java:179)
+	at org.gradle.api.internal.tasks.compile.ApiGroovyCompiler.execute(ApiGroovyCompiler.java:57)
+	at org.gradle.api.internal.tasks.compile.GroovyCompilerFactory$DaemonSideCompiler.execute(GroovyCompilerFactory.java:84)
+	at org.gradle.api.internal.tasks.compile.GroovyCompilerFactory$DaemonSideCompiler.execute(GroovyCompilerFactory.java:72)
+	at org.gradle.api.internal.tasks.compile.daemon.AbstractDaemonCompiler$CompilerCallable.call(AbstractDaemonCompiler.java:99)
+	at org.gradle.api.internal.tasks.compile.daemon.AbstractDaemonCompiler$CompilerCallable.call(AbstractDaemonCompiler.java:79)
+	at org.gradle.workers.internal.DefaultWorkerServer.execute(DefaultWorkerServer.java:44)
+	at org.gradle.workers.internal.AbstractClassLoaderWorker.executeInClassLoader(AbstractClassLoaderWorker.java:34)
+	at org.gradle.workers.internal.IsolatedClassloaderWorker.execute(IsolatedClassloaderWorker.java:55)
+	at org.gradle.workers.internal.WorkerDaemonServer.execute(WorkerDaemonServer.java:55)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.process.internal.worker.request.WorkerAction.run(WorkerAction.java:116)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+
+
+* Get more help at https://help.gradle.org
+
+BUILD FAILED in 1s
+4 actionable tasks: 4 executed
