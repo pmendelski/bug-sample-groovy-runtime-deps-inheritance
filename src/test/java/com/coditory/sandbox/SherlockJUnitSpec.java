@@ -8,15 +8,18 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class SherlockSpec {
+class SherlockJUnitSpec {
   @Test
-  void shouldWork() {
+  void shouldAcquireAndReleaseLock() {
+    // given
     ReactorSherlock sherlock = ReactorSherlock
       .toReactorSherlock(ReactiveInMemorySherlock.builder().build());
     ReactorDistributedLock lock = sherlock.createLock("lock");
+    // when
     ReleaseResult result = lock.acquire()
       .flatMap(x -> lock.release())
       .block();
+    // then
     assertTrue(result.isReleased());
   }
 }

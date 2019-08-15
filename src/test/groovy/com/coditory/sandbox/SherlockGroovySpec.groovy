@@ -6,7 +6,7 @@ import com.coditory.sherlock.ReactorSherlock
 import com.coditory.sherlock.connector.ReleaseResult
 import spock.lang.Specification
 
-class SherlockSpec extends Specification {
+class SherlockGroovySpec extends Specification {
   def "should work"() {
     given:
       ReactorSherlock sherlock = ReactorSherlock.toReactorSherlock(ReactiveInMemorySherlock.builder().build())
