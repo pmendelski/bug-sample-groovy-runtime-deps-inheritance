@@ -13,8 +13,6 @@ sourceCompatibility = JavaVersion.VERSION_11
 dependencies {
   compile "com.coditory.sherlock:sherlock-inmem-reactive:0.3.0"
   compile "com.coditory.sherlock:sherlock-api-reactor:0.3.0"
-  testImplementation "org.junit.jupiter:junit-jupiter-api:5.5.1"
-  testRuntime "org.junit.jupiter:junit-jupiter-engine:5.5.1"
   testCompile "org.spockframework:spock-core:2.0-M2-groovy-3.0"
 }
 
